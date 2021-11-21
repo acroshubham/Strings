@@ -1,0 +1,744 @@
+Strings:
+
+Character Set/ Ascii codes
+character arrays
+strings 
+creating of strings
+
+ASCII Codes:
+
+Computer runs on binary:
+
+Sum set of numbers are forming Characters.
+ASCII American Standard codes for Information Interchange
+
+Given By AMC.
+
+Than UNICODES. for other national languages.
+
+A = 64		a = 97
+z = 90		b = 122
+
+0 = 48
+9 = 57
+
+enter = 10.
+space = 13
+esc = 27.
+
+0-127
+total 128 ascii codes
+only seven bits are sufficient 
+but stored in 1 byte in computer memory.
+
+Unicodes: 2 bytes or 16 bits.
+
+co3a.
+
+Character type variable:
+
+character temp = 'a';
+in memory its stored as  65.
+
+printf(%d, temp)
+display 64
+
+%c display a.
+
+array decln of characters.
+
+char x[] = {a,b,c,d,e,f,g,h,i};
+stores ascii codes of the elements.
+
+char name[10] = { 'j', 'h', 'o', 'n'};
+
+array of characters storing jhon:
+
+j h o n 0 0 0 0 
+
+array of char is a string.
+
+String is set of character.
+
+
+But we should know where is the end of the string
+so in c and c++ its marked by '/O'.
+
+this is a null character.
+string terminator.
+deliminator character.
+
+in java string length should be known.
+
+add at last , '/0'.
+
+char name[] /0 also consumes spaces.
+
+char name [] = "jhon" automatic added /0
+
+char *name = "jhon".
+
+
+name pointer points to jhon in heap
+
+display a string:
+
+char name [] = {'j','h','o','n', '/0'};
+
+printf("%s", name);
+scanf("%s", name);
+
+null character imp.
+
+scanf can't read the space.
+than gets(name); help it
+
+
+        
+
+
+
+
+
+Finding length of a String.
+
+functions upon string.
+
+length of string find.
+
+s= w e l c o m e /0.
+
+   0 1 2 3 4 5 6 7.
+
+length of string 7.
+
+array is 8-1 which is 7. 
+
+method just find /0.
+
+for till /0 than stop.
+
+
+char *s = "welcome";
+
+int i;
+
+for(i= 0; s[i] != '/0'; i++);
+{
+	cout<< "length is :" i;
+}
+
+
+
+
+
+
+
+Change case of alphabects.
+
+WELCOME.
+
+A- 64
+z- 90
+
+a - 97
+z - 122.
+
+
+difference between uppercase and lowercase is 34
+add A 32 we will get a.
+
+char A = "WELCOME";
+int i;
+for(i= 0; A[i] != '/0'; i++);
+{
+	A[i] = A[i] + 32.
+}
+printf ("%d" , A);
+
+TOGGLE THE CASE UC TO LC AND LC TO UC.
+
+char A = "WELCOME";
+int i;
+for(i= 0; A[i] != '/0'; i++);
+{
+	if(A[i <= 64; && A[i <= 90)
+
+	aofi += 32;
+
+	elseif(aofi 'a' or 97 && aofi<= 122
+	
+	aofi -= 32;
+}
+
+cout<< A;
+
+
+
+couting vowels and consonents:
+
+
+
+int main(){
+    char A[] = "how are you";
+    int i , vcount = 0 , ccoutn = 0;
+    for(i = -; A[i]! = '/0'; i++){
+        if ( A[i] == 'a' || A[i] == 'A'){
+            vcount ++;
+        }
+        space will also be counted.
+        so, 
+        else if aof i >= 64 && aof i >= 90;
+        || aofi >= 97 && aofi <= 122
+        ccoutn ++;
+    }
+
+}
+cout << vcount << ccount;
+
+how to check no. of works count spaces
+
+if(aofi == ' ' && aofi-1 != ' '){
+    word++;
+}
+cout word;
+
+contionous set of spaces white space
+
+how are    u.
+
+
+
+
+validate a string.
+
+valid password only number and alpha no special char.
+
+
+
+1. basic method:
+
+/0 end.
+
+valid (char * name){
+    int i; 
+    for ( i = 0; name[i] ! = '/0' ; i ++){
+        if(! if not in this range nameofi >= 65 and <= 90)
+        && ! namofi >= 97 && nameof i <= 122
+        && 48 , 57.
+        return 0;
+    }
+    return 1.
+
+
+
+    if(valid){
+        cout << valid passkey
+    }
+    else {
+        cout << not passeky valid.
+    }
+}
+
+
+
+
+
+
+
+
+REVERSE A STRING.
+
+int main () {
+    char A[] = "python";
+    char B[7];
+
+    for(int i = 0; A[i]!= '/0'; i++){
+        i = i -1;
+        for(j = 0; i>=0; i--,j++){
+            B[j] = A[i]; 
+        }
+        B[j] = '/0'.
+        printf("%s" , B);
+    }
+}
+
+to reverse a string, there are more than two medthods:
+1. we will take another array and copy the array 1st backwards. 
+and, at the end add /0.
+
+i as an index for postion 0 and move it until reach /0.
+
+A = python 
+         i
+B = starts from 0 than, deccrement i and increment j. as i is at last so , inc it.  
+
+and than finally copy it.
+
+
+2. method
+
+do not require extra array.
+
+in some compilers. strings are not mutable. can't be modified. So, declare it with array of characters.
+
+swipe the characters is the logic. the first with the last and so on.
+
+scan from first and last position.
+
+
+
+
+code:
+
+
+int main(){
+    char A[] = "python";
+    int i,j;
+    for(j = 0; A[j] != '/0'; j++){
+        j = j-1;
+    }
+    for(i = 0; i<j; i++, j--){
+        t = A[i];
+        A[i] = A[j];
+        A[j] = t;
+    }
+    printf(%s, A);
+}
+
+
+
+
+Checking Palindrome and Comparing two strings
+
+example 
+
+A = Painter /0
+
+B = Painting/0
+
+
+
+
+
+int main(){
+    char A[] = "Painter";
+    char B[] = "Painting";
+
+    int i,j;
+
+    for(int i = 0; A[i] ! = '/0' && B[j]!= '/0'; i ++ , j++ ){
+        if(A[i] != B[j]);
+        break;
+        // if they are not matching than simply stop from this for loop or simply break.
+
+        check greater smaller or /0
+
+        if(A[i] = B[j]){
+            cout << "equall";
+        }
+        else if(A[i]< B[j]){
+            cout << "smaller";
+        }
+        else {
+            cout << "greater";
+        }
+    }
+}
+
+
+we will take two poitners i and j compare if both are equall or not.
+
+one which comes first will be small and later will be bigger.
+
+i.e. string 1 is greater than the other.
+
+if match than what happens
+
+painter /0
+painter /0
+
+i and j equall continure reache /0 stop. means they are equall  and in the old string we will stop 
+at the beginning as fist one is smaller if bigger alphabect than a is greater. 
+
+
+what if p is small in a and big in b. 
+ASCII codes are higher. check indipendent of cases.
+Or it will stop at P , p and the code will break.
+
+
+Palindrome :
+
+nitin = Palindrome;
+
+
+
+int main(){
+    char A[] = "nitin";
+    char B[6];
+
+
+    student challange.
+
+}
+
+proceedure:
+
+reverse copy a string. 
+check if both are equall and than they are palindrome or they are not.
+
+array A and B. revere copy A to B.
+
+2nd Method. Compare. i and j increment and deccrement. Check same than do it. 
+
+
+
+
+
+
+
+Finding Duplicates in a string.
+/
+A = F I N D I N G /0
+
+methods to find Duplicate character in the string.
+
+1. Compare with other letters.
+
+2. Using Hashtable or Counting.
+
+3. Using Bits.
+
+
+i and j take j counter check f is in whole string. Reached the end. Move to the next character.
+
+for i found after inc. j and when its done. Than do the thing is that make the i 0. so it'll not be 
+counted. Time taken by that formula will be Big Oofn2.
+
+2nd method using Hashtable
+
+array to work as a Hashtable
+
+going to store alphabect having their ascii code
+
+f i n d i n g /0
+102 105 100 105 1110 103
+
+array starting from 97 lowercase range upto 122.
+
+1 to 96 are useless
+
+so we can do 0 to 25 i.e 26. We have reduced the size of Hashtable
+
+H       1   1     1            2
+  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+
+f i n d i n g 
+
+f = 102 - 97 = 5
+
+go to index 5 its 0 and increment it to 1
+
+i = 105 - 97 = 8
+n = 110 - 97 = 13;
+d = 100 - 97 = 3
+
+code: to perform the proceedure and display only those who are appearing more than one Time
+
+int main(){
+    char A[] = "finding";
+    int H[26], i;
+// scan from strings
+    for( i = 0; A[i]!= '/0'' i++){
+        H[A[i]-97] + = 1;
+    }
+    // scan of Hashtable
+    for(i = 0; i<26/ i++){
+        if(H[i]>1){
+            printf("%c", i+97);// add 97 at 8 + 97 = 105 and that's i 
+            printf("%d") , H[i]);// now print that alphabect
+        }
+    }
+}
+
+tc: behaviour is linear. n + n = 2n; so, O[n];
+
+
+
+
+
+3. Finding Duplicates by using Bit Operations
+
+// know how to do it by string.
+
+lecture no 139.
+// to revise the concepts
+
+Anagram of a strings:
+
+two set of strings formed by same set of strings
+
+A d e c i m a l
+B m e d i c a l 
+
+// check of the equall size. other wise one has to check.
+
+take alpha from string and search for b found than found
+
+time order of n2 time. 
+duplicates if found than also find that and another time complexity
+
+second method using hashtable
+
+ascii codes 
+
+100 101 99 105 109 97 107
+d   e   c  i   m   a  l
+
+in hashtable go to index and mark it to one and keep on going that
+
+if char is repeating than the h value become 2 and 
+
+than scan through another string and than decrement it in the hashtable
+
+and it should also not become -1.
+
+
+when it become -1 than, we will get not a Anagram
+
+tc n n n = 3n so, order of n.
+
+int main(){
+    char A[] = "decimal";
+    char B[] = "medical";
+    int H[26], i;
+     for( i = 0; A[i]!= '/0'' i++){
+        H[A[i]-97] + = 1;
+    }
+    for( i = 0; B[i]!= '/0'' i++){
+        H[A[i]-97] - = 1;
+    for(i = 0; i<26/ i++){
+        if(H[A[i] - 97] < 0){
+            printf("not Anagram"); 
+            break;
+        }
+        if(B[i] == '/0'){
+            printf("Anagram");
+        } 
+    }
+    }
+}
+
+duplicates 
+verbose
+observe
+
+ee at 4 it becomes 2.
+go to same index and it'll beome 1 and in second go it will beomce 0.
+
+also can be done using bits if no duplicates.
+
+
+
+
+
+
+Permutations of a String
+1st Method
+
+String String
+
+S A B C
+
+abc 
+acb 
+bac 
+cab 
+cba 
+
+for 3 leters Permutations are 3! and for n n!
+
+                                               abc
+                        A                       B                       C     
+                    B       c               A       C               A       B 
+                c               B        C               A      B               A 
+                abc             acb      bac             bca    cab             cba
+
+state space tree. leaves are showing us the results
+go back and take another route so, it is representing backtracking.
+
+and it is called as bruteforce. finding out all possible Permutations.
+go back and take another route is called backtracking
+
+recursion 
+we have to use recursion to achieve backtracking with help of backtracking we are performing bruteforce
+
+use of stack also can be done by loops 
+
+
+
+recursive functions
+
+1st call : call itself than again call itself go back go back than again it call itself 
+than take the missing one
+
+1st level select both 
+traversing through the string and than the recursive function is picking up the remaining one
+
+flag array
+recursive array 
+
+i = 0; aof i = 0; makes that = 1
+
+start with k = 0; write A here and than call itself againf
+
+1st call k = 0 and i 0 make aofi = 1 and write a down and call itself again recursive
+
+K++ k is at level 1. scan through entire string make i = 0; 
+available no 
+than i++
+
+i = 1;
+call itself again 
+k =1;
+
+K++;
+calling done again 
+next level 
+k = 2
+scan through entire string and check if the item is available. take those alphabect which are missing
+
+i start from 0 
+i++
+ABC 
+  0 0 0 0
+A 1 1 1 0
+
+now k has reached /0. 
+k now start from next level 
+when k =3 than printing is done;
+
+now we will do contionous scanning of string as null found go back to previous call
+
+k was at 1 and i was at one.
+
+what we were doing here scanning through the string and continue 
+so now make i as 0 and than continue
+go back and make it as 0. 
+this step is backtracking 
+ 
+whenever the alphabect is available make it as one and than countine
+
+call itself again for the next level 
+k is now 2
+than again scan through the whole string
+
+k= 1 
+i = 2
+
+k = 2
+i = 1
+
+make the prvious as 0 and than continue 
+
+when reached null now again go back to the back level. 
+going back mark the one as 0 and continue scanning
+
+Do, it, on pen and paper to gain the knowledge from the depth
+
+
+and go on doing that. for every route or one can say it as level
+
+go back and see that where is k and i and than make i as 0 and than continue 
+
+
+function 
+
+void perm (array s[], int k){
+    static int A[int] = 0;
+    // we need two arrays permanently their. static will make available for every function call
+    static char res[10];
+
+    int i;
+    if (s[k] == '/0'){
+        res[k] == '/0';
+        printf(res);
+    }
+    for(i = 0; s[i]! = '/0' ; i++){
+        if(A[i] == 0){
+            res[k] = s[i];
+            A[i] = 1;
+            perm(s, k+1);
+            // returning make i again 0;
+            A[i]= 0;
+        }
+    }
+} k = call number
+
+
+main(){
+    char s[] = "ABC";
+    perm(s,0);
+}
+
+devise the whole function by using pen and paper. 
+needs practise
+
+framing a logic and than making a function is important, than making the coding
+
+
+2nd method:
+
+Proceedure: Using swapping 
+
+Starting array is given
+
+need starting and ending index that is length of the string
+
+
+
+so we will take tow pointer i and j I will be at starting index and j will be at the length of array
+
+S = A   B   C
+
+                                    abc
+
+abc i at a and l at a position 1 and h at last 
+1st call. Scan through the whole string
+swap the letter with l and the alphabect present at that posistion
+                                       h
+abc                                  abc                acb
+ lh                                   li swap l and i 
+ I                                  i was at 1 so, it will move to next. 
+ 
+ abc                                a c b          
+   lh                                    lh equall
+   I
+   printng will be done here             print.
+
+now go back to the previous call i was at 1 in next call i will move to next swap l and i
+
+
+
+go back to previous call and i is at position 0. 
+next call 
+
+l     h
+b  a  c
+
+
+and so on...
+
+
+
+
+void Perm(low, high){
+    int i;
+    if(l == h){
+        printf(s);
+    }
+    else{
+    for(int i =0; i<h; i++){
+        swap(s[l], s[i]);
+        perm(s , l+1, s[i]);
+        swap(s[l], s[i]);
